@@ -28,5 +28,21 @@ public class ProduitServiceTest {
 
 	        assertTrue(produitService.verification(produit2));
 	    }
+	    
+	    @Test
+	    public void testModifierProduit() {
+	        
+	        Produit produitInitial = new Produit(1, "Produit A", 10.0, 5);
+	        produitService.AjouterProduit(produitInitial);
+
+	       
+	        Produit produitModifie = new Produit(1, "Produit Modifié", 15.0, 8);
+
+	       
+	        produitService.ModifierProduit(produitModifie);
+
+	        
+	        assertTrue(produitService.verification(produitModifie));
+	    }
 
 }
