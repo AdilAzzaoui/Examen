@@ -57,4 +57,18 @@ public class ProduitService {
 			System.out.println("Le produit n'existe pas !");
 		}	
 	}
+	public void SupprimerProduit(Produit produit) {
+		try {
+			if(!verification(produit)) {
+				throw new NullPointerException();
+			}
+			for (Produit product : produits) {
+				if(product.getId() == produit.getId()) {
+					produits.remove(product);
+				}
+			}
+		}catch(NullPointerException e) {
+			
+		}
+	}
 }
