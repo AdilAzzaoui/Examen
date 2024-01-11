@@ -65,5 +65,22 @@ public class ProduitServiceTest {
 	        assertTrue(produitService.verification(produit2));
 	    }
 	    
+	    @Test
+	    public void testListerProduitAvecProduits() {
+	        Produit produit1 = new Produit(1, "Produit A", 10.0, 5);
+	        Produit produit2 = new Produit(2, "Produit B", 15.0, 8);
+
+	        produitService.AjouterProduit(produit1);
+	        produitService.AjouterProduit(produit2);
+
+	        
+	        produitService.ListerProduit();
+	    }
+	    
+	    @Test
+	    public void testListerProduitSansProduits() {
+	       
+	        produitService.ListerProduit();
+	    }
 
 }
