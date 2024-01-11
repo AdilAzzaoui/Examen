@@ -71,4 +71,27 @@ public class ProduitService {
 			
 		}
 	}
+	
+	public void ListerProduit()
+	{
+		try {
+			if(produits.isEmpty())
+			{
+				throw new IllegalStateException();
+			}
+			for(Produit product : produits)	
+			{ 
+				System.out.println("\t\t**********Produit*************");
+				System.out.println("Numéro   :"+product.getId());
+				System.out.println("Nom      :"+product.getNom());
+				System.out.println("Prix     :"+product.getPrix());
+				System.out.println("Quantité :"+product.getQuantité());
+				System.out.println("___________________________________");
+			}
+		}
+		catch(IllegalStateException e)
+		{
+			System.out.println("Aucun produit n'existe !");
+		}
+	}
 }
